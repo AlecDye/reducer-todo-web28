@@ -2,7 +2,7 @@ import React, { useState, useReducer } from "react";
 
 import { taskReducer, initialState } from "../reducers/taskReducer";
 
-const TaskForm = () => {
+const TaskForm = props => {
   const [state, dispatch] = useReducer(taskReducer, initialState);
   const [newTask, setNewTask] = useState("");
 
@@ -14,9 +14,15 @@ const TaskForm = () => {
     dispatch({ type: "CLEAR_COMPLETED" });
   };
 
+  const handleSubmit = e => {
+    e.preventDefault();
+    props.handleNewTask(newTask);
+    setNewTask("");
+  };
+
   return (
     <div>
-      <form onSubmit={() => dispatch({ type: "ADD_TASK", payload: newTask })}>
+      <form onSubmit={handleSubmit}>
         <input
           type="text"
           name="task"
