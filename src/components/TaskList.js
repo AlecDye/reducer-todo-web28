@@ -5,7 +5,7 @@ import TaskItem from "./TaskItem";
 const TaskList = props => {
   return (
     <div>
-      <TaskItem />
+      <TaskItem handleToggle={props.handleToggle} />
     </div>
   );
 };
