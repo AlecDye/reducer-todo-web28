@@ -12,7 +12,7 @@ const ADD_TASK = "ADD_TASK";
 const TOGGLE_TASK = "TOGGLE_TASK";
 const CLEAR_COMPLETED = "CLEAR_COMPLETED";
 
-export const taskReducer = (state = initialState, action) => {
+export const taskReducer = (state, action) => {
   switch (action.type) {
     case ADD_TASK:
       return {

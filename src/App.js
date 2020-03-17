@@ -18,7 +18,7 @@ function App() {
     dispatch({ type: "TOGGLE_TASK", payload: item });
   };
   const handleClear = () => {
-    dispatch({ type: "CLEAR_COMPLETED " });
+    dispatch({ type: "CLEAR_COMPLETED" });
   };
 
   console.log(state.taskData);
