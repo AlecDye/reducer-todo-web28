@@ -1,18 +1,18 @@
-import React, { useState, useReducer } from "react";
+import React, { useState } from "react";
 
-import { taskReducer, initialState } from "../reducers/taskReducer";
+// import { taskReducer, initialState } from "../reducers/taskReducer";
 
 const TaskForm = props => {
-  const [state, dispatch] = useReducer(taskReducer, initialState);
+  //   const [state, dispatch] = useReducer(taskReducer, initialState);
   const [newTask, setNewTask] = useState("");
 
-  const handleChanges = e => {
-    setNewTask(e.target.value);
-  };
+  //   const handleChanges = e => {
+  //     setNewTask(e.target.value);
+  //   };
 
-  const handleClear = () => {
-    dispatch({ type: "CLEAR_COMPLETED" });
-  };
+  //   const handleClear = () => {
+  //     dispatch({ type: "CLEAR_COMPLETED" });
+  //   };
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -27,11 +27,13 @@ const TaskForm = props => {
           type="text"
           name="task"
           value={newTask}
-          onChange={handleChanges}
+          onChange={e => {
+            setNewTask(e.target.value);
+          }}
         />
         <button type="submit">Add Task</button>
       </form>
-      <button onClick={handleClear}>Clear Completed</button>
+      {/* <button onClick={handleClear}>Clear Completed</button> */}
     </div>
   );
 };

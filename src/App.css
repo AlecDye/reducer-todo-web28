@@ -1,3 +1,10 @@
 .App {
   text-align: center;
 }
+p {
+  cursor: pointer;
+}
+.toggled {
+  text-decoration: line-through;
+  stroke: 200;
+}
